@@ -10,6 +10,10 @@
     background: #010101;
 }
 
+.cardOverlayContainer {
+    background: rgba(128, 26, 26, .6);
+    border-radius: 15px;
+
 /* Rounded corners for media cards */
 .cardContent {
     border-radius: 15px !important;
