@@ -6,6 +6,10 @@
     --card-background: #1e1e1e;    /* Card background */
 }
 
+.backgroundContainer {
+    background: #010101;
+}
+
 /* Rounded corners for media cards */
 .cardContent {
     border-radius: 15px !important;
