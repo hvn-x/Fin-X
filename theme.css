@@ -13,7 +13,7 @@
 
 /* Blur/Translucent top navigation bar */
 .headerTop {
-    background: rgba(138, 26, 26, 0.7) !important;
+    background: rgba(107, 20, 20, 0.7) !important;
     backdrop-filter: blur(10px);
 }
 
