@@ -8,15 +8,11 @@
 
 /* Rounded corners for media cards */
 .cardContent {
-    border-radius: 20px !important;
+    border-radius: 15px !important;
 }
 
 /* Blur/Translucent top navigation bar */
 .headerTop {
     background: rgba(107, 20, 20, 0.7) !important;
     backdrop-filter: blur(10px);
-}
-
-.pageTitleWithDefaultLogo {
-    background-image: url("https://raw.githubusercontent.com/hvn-x/Fin-X/refs/heads/main/Fin-Xlogo.png") !important;
 }
