@@ -8,11 +8,15 @@
 
 /* Rounded corners for media cards */
 .cardContent {
-    border-radius: 12px !important;
+    border-radius: 20px !important;
 }
 
 /* Blur/Translucent top navigation bar */
 .headerTop {
-    background: rgba(20, 20, 20, 0.7) !important;
+    background: rgba(rgba(138,26,26, 0.7)) !important;
     backdrop-filter: blur(10px);
+}
+
+.pageTitleWithDefaultLogo {
+    background-image: 
 }
