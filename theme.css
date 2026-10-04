@@ -16,8 +16,19 @@
 }
 
 /* Rounded corners for media cards */
+.cardImageContainer
 .cardContent {
     border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+.cardImage {
+    border-radius: 15px !important;
+}
+
+.cardBox {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Blur/Translucent top navigation bar */
