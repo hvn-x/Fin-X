@@ -1,0 +1,18 @@
+/* Quick Color Scheme Overrides */
+:root {
+    --accent-color: #7289da;      /* Changes primary accents/buttons */
+    --accent-hover: #5b6eae;      /* Button hover states */
+    --background-color: #121212;  /* Main background */
+    --card-background: #1e1e1e;    /* Card background */
+}
+
+/* Rounded corners for media cards */
+.cardContent {
+    border-radius: 12px !important;
+}
+
+/* Blur/Translucent top navigation bar */
+.headerTop {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(10px);
+}
