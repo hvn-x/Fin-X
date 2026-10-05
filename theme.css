@@ -1,7 +1,7 @@
 /* Quick Color Scheme Overrides */
 :root {
     --accent-color: #8a1a1a;      /* Changes primary accents/buttons */
-    --accent-hover: #5b6eae;      /* Button hover states */
+    --accent-hover: #8a1a1a;      /* Button hover states */
     --background-color: #121212;  /* Main background */
     --card-background: #1e1e1e;    /* Card background */
 }
@@ -10,29 +10,205 @@
     background: #010101;
 }
 
-.cardOverlayContainer {
-    background: rgba(128, 26, 26, .6);
-    border-radius: 15px !important;
+/* Strip background and box shadow from outer card wrappers */
+.card,
+.cardScalable,
+.cardBox,
+.cardPadder {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
-/* Rounded corners for media cards */
-.cardImageContainer
-.cardContent {
+/* Force outer containers to clip square corners */
+.cardScalable,
+.cardContent,
+.cardImageContainer {
     border-radius: 15px !important;
     overflow: hidden !important;
 }
 
-.cardImage {
+/* Ensure the poster image itself scales inside the rounded boundaries */
+.cardImage,
+.cardImageContainer > img {
     border-radius: 15px !important;
 }
 
-.cardBox {
-    background: transparent !important;
-    box-shadow: none !important;
+.cardOverlayContainer {
+   border-radius: 15px !important;
+   background: rgba(0,0,0, 0.6) !important;
 }
 
-/* Blur/Translucent top navigation bar */
-.headerTop {
-    background: rgba(107, 20, 20, 0.7) !important;
+.itemProgressBar {
+   background: rgba(256, 256, 256, .3);
+}
+
+.itemProgressBarForeground {
+    background-color: #8a1a1a;
+}
+
+.focuscontainer {
+   background-color: #ffffff10;
+   border-radius: 15px !important;
+   backdrop-filter: blur(10px);
+}
+
+.drawer-open, .mainDrawer {
+    background-color: #ffffff10;
+    border-radius: 15px;
     backdrop-filter: blur(10px);
+}
+
+.headerTop {
+   background: #ffffff00 !important;
+   border-radius: 15px;
+}
+
+/* Button hover color change */
+.button-flat:hover,
+.emby-button:hover,
+.paper-icon-button-light:hover,
+.actionSheetMenuItem:hover {
+    background-color: rgba(128, 26, 26, 0.3) !important; /* Subtle red tint on hover */
+    color: #ff0000 !important;                          /* Red icon/text on hover */
+}
+
+/* Force the button background */
+@media (hover: hover) and (pointer: fine) {
+    .media-bar-settings-button:hover:not(:disabled) {
+        background-color: rgba(255, 0, 0, 0.2) !important;
+        color: #ff0000 !important;
+    }
+}
+
+/* Turn the entire SVG image into a clean solid red mask on hover */
+.media-bar-settings-button:hover img[src*="logo_SW_MINIMAL.svg"] {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(99%) saturate(7404%) hue-rotate(358deg) brightness(95%) contrast(118%) !important;
+}
+
+.play-button {
+   background-color: rgba(255, 255, 255, 0.1);
+   color: #ffffff;
+   backdrop-filter: blur(10px);
+   border-radius: 15px;
+}
+
+.favorite-button {
+   display: inline-flex;
+   flex-direction: row;
+   align-items: center;
+   background-color: rgba(255, 255, 255, 0.1);
+   color: #ffffff;
+   backdrop-filter: blur(10px);
+   height: 50.19px;
+   width: 88.97px;
+   border-radius: 15px;
+   white-space: nowrap;
+   padding: 8px 16px;
+   box-sizing: border-box;
+   gap: 6px;
+}
+
+.favorite-button.favorited {
+   color: #ffffff;
+}
+
+.favorite-button::after{
+   content: "Like";
+   font-family: "Archivo Narrow", sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+.detail-button {
+   display: inline-flex;
+   flex-direction: row;
+   align-items: center;
+   background-color: rgba(255, 255, 255, 0.1);
+   color: #ffffff;
+   backdrop-filter: blur(10px);
+   height: 50.19px;
+   width: 88.97px;
+   border-radius: 15px;
+   white-space: nowrap;
+   padding: 8px 16px;
+   box-sizing: border-box;
+   gap: 6px;
+}
+
+.detail-button::after{
+   content: "Info";
+   font-family: "Archivo Narrow", sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+/* Shared look for the middle tab pill and the right-hand pill */
+.headerTabs,
+.headerRight {
+    background: #ffffff10 !important;
+    border-radius: 15px !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.25) !important;
+}
+
+/* Middle tab pill: match the right-hand pill */
+.headerTabs {
+   position: relative !important;
+   top: -3.4em !important;   /* pulls the pill up into the top header row; nudge this value to line it up with the right pill */
+   height: auto !important;
+   align-self: center !important;
+   display: inline-flex !important;
+   align-items: center !important;
+   padding: 5px !important;
+   gap: 5px !important;
+   margin: 0 !important;
+   text-align: center;
+}
+
+/* Inner slider that holds the buttons */
+.headerTabs .emby-tabs-slider {
+   display: inline-flex !important;
+   align-items: center !important;
+   gap: 5px !important;
+   height: auto !important;
+}
+
+/* Individual tabs */
+.emby-tab-button {
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   height: auto !important;
+   margin: 0 !important;
+   padding: 8px 16px !important;
+   border-radius: 70px !important;
+   gap: 8px !important;
+}
+
+.emby-tab-button-active {
+   background: #ff000080 !important;
+}
+
+/* Hover shape only, no padding change so nothing shifts */
+.emby-button:hover {
+   border-radius: 70px;
+}
+
+.skinHeader-withBackground {
+    background-color: #ffffff00;
+}
+
+/* The tab row's original (now empty) space still covers the media bar buttons.
+   Let clicks pass through the header itself, but keep the real controls clickable. */
+.skinHeader,
+.headerTop {
+    pointer-events: none !important;
+}
+
+.headerLeft,
+.headerRight,
+.headerTabs {
+    pointer-events: auto !important;
 }
