@@ -1,0 +1,205 @@
+/* ==========================================================
+   Fin-X: Jellyfin custom CSS
+   Fin-X provides a clean frosted glass-like look to your jellyfin
+   along with red & gray accents. This theme is still being developed,
+   so please allow time for when a new update releases and for current
+   pages to be updated. Thank you for using Fin-X.
+   ========================================================== */
+
+/* ---------- Colors and backgrounds ---------- */
+:root {
+    --accent-color: #8a1a1a;      /* Changes primary accents/buttons */
+    --accent-hover: #8a1a1a;      /* Button hover states */
+    --background-color: #121212;  /* Main background */
+    --card-background: #1e1e1e;   /* Card background */
+    --jf-palette-primary-main: #ff0000;
+    --jf-palette-AppBar-darkBg: #ffffff00;
+}
+
+.backgroundContainer {
+    background: #010101;
+}
+
+.backgroundContainer.withBackdrop,
+.MuiBox-root {
+    opacity: 1;
+}
+
+/* ---------- Cards ---------- */
+
+/* Strip background and box shadow from outer card wrappers */
+.card,
+.cardScalable,
+.cardBox,
+.cardPadder {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Clip rounded corners on the outer containers */
+.cardScalable,
+.cardContent,
+.cardImageContainer {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+/* Make the poster image follow the rounded boundaries */
+.cardImage,
+.cardImageContainer > img {
+    border-radius: 15px !important;
+}
+
+.cardOverlayContainer {
+    border-radius: 15px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.itemProgressBar {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.itemProgressBarForeground {
+    background-color: #8a1a1a;
+}
+
+/* ---------- Menus and side drawer ---------- */
+
+/* Dropdown menus (profile menu, sort menus, etc.) */
+.MuiMenu-list,
+.focuscontainer {
+    background-color: #ffffff10;
+    border-radius: 15px !important;
+    backdrop-filter: blur(10px);
+}
+
+.MuiMenu-paper {
+    background: rgba(255, 255, 255, 0) !important;
+    border-radius: 15px;
+}
+
+/* Side drawer */
+.MuiDrawer-paper {
+    background-color: #ffffff10 !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 15px !important;
+}
+
+/* ---------- Hover colors ---------- */
+
+/* Standard buttons and action sheet items */
+.button-flat:hover,
+.emby-button:hover,
+.paper-icon-button-light:hover,
+.actionSheetMenuItem:hover {
+    background-color: rgba(128, 26, 26, 0.3) !important; /* Subtle red tint on hover */
+    color: #ff0000 !important;                           /* Red icon/text on hover */
+}
+
+/* Top bar and drawer buttons (built differently, which is why the
+   rule above doesn't reach them) */
+.MuiAppBar-root .MuiButtonBase-root:hover,
+.MuiAppBar-root .MuiButtonBase-root:focus-visible,
+.MuiDrawer-root .MuiButtonBase-root:hover,
+.MuiDrawer-root .MuiButtonBase-root:focus-visible {
+    background-color: rgba(128, 26, 26, 0.3) !important;
+    color: #ff0000 !important;
+    border-radius: 15px;
+}
+
+/* Make sure icons and text inside follow the hover color */
+.MuiAppBar-root .MuiButtonBase-root:hover svg,
+.MuiAppBar-root .MuiButtonBase-root:hover .MuiSvgIcon-root,
+.MuiAppBar-root .MuiButtonBase-root:hover .MuiButton-startIcon,
+.MuiDrawer-root .MuiButtonBase-root:hover svg,
+.MuiDrawer-root .MuiButtonBase-root:hover .MuiSvgIcon-root {
+    color: #ff0000 !important;
+    fill: currentColor !important;
+}
+
+/* Menu items (like the Profile dropdown) */
+.MuiMenuItem-root:hover,
+.MuiMenuItem-root:focus-visible,
+.MuiListItemButton-root:hover,
+.MuiListItemButton-root:focus-visible {
+    background-color: rgba(128, 26, 26, 0.3) !important;
+    color: #ff0000 !important;
+}
+
+/* The icon sits in its own wrapper with its own color, so it doesn't
+   pick up the text color on hover and has to be told to follow it */
+.MuiMenuItem-root:hover .MuiListItemIcon-root,
+.MuiMenuItem-root:hover svg,
+.MuiMenuItem-root:focus-visible .MuiListItemIcon-root,
+.MuiMenuItem-root:focus-visible svg,
+.MuiListItemButton-root:hover .MuiListItemIcon-root,
+.MuiListItemButton-root:hover svg,
+.MuiListItemButton-root:focus-visible .MuiListItemIcon-root,
+.MuiListItemButton-root:focus-visible svg {
+    color: #ff0000 !important;
+    fill: currentColor !important;
+}
+
+.MuiMenuItem-root:hover svg path,
+.MuiMenuItem-root:focus-visible svg path,
+.MuiListItemButton-root:hover svg path,
+.MuiListItemButton-root:focus-visible svg path {
+    fill: currentColor !important;
+}
+
+/* Accent line under the selected tab, if your page uses MUI tabs */
+.MuiTabs-indicator {
+    background-color: #8a1a1a !important;
+}
+
+/* ---------- Item details page buttons ---------- */
+
+.detailButton {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+}
+
+.detailButton:hover {
+    background-color: rgba(128, 26, 26, 0.3) !important;
+    color: #ff0000 !important;
+}
+
+/* ---------- Top bar (the Fin-X pills) ---------- */
+
+/* The main top bar holds three items in this order:
+   1 = left group (logo and links), 2 = right button group, 3 = avatar.
+   These selectors use that position instead of generated class names. */
+
+/* Left and right groups share the pill look */
+.MuiAppBar-root.MuiPaper-elevation0 > .MuiToolbar-root > :nth-child(1),
+.MuiAppBar-root.MuiPaper-elevation0 > .MuiToolbar-root > :nth-child(2) {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+/* Right-hand group: shrinks to fit its buttons and extends under the avatar */
+.MuiAppBar-root.MuiPaper-elevation0 > .MuiToolbar-root > :nth-child(2) {
+    flex-grow: 0 !important;
+    width: fit-content !important;
+    margin-left: auto !important;
+    padding-right: 52px !important;   /* keep equal to the avatar's negative margin below */
+    height: 43.5px !important;
+}
+
+/* Avatar button: slides back over the right-hand pill */
+.MuiAppBar-root.MuiPaper-elevation0 > .MuiToolbar-root > :nth-child(3) {
+    position: relative !important;
+    z-index: 1;
+    margin-left: -52px !important;    /* keep equal to the padding above */
+}
+
+/* Shadow that comes with the scroll-down bar.
+   TODO: this generated class matched nothing when checked;
+   re-check it while the bar is showing. */
+.css-s433dn {
+    box-shadow: none !important;
+}
