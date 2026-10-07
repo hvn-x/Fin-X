@@ -1,1 +1,1 @@
-img src-"Fin-Xlogo.png"
+<img src="Fin-Xlogo.png" />
