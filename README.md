@@ -7,6 +7,9 @@
 Will be added when I feel productive
 
 ## Installation:
+
+Go to Dashboard > Branding > Custom CSS Code
+
 ### Main Stylesheet
 ```css
 @import url("https://cdn.jsdelivr.net/gh/hvn-x/Fin-X@main/THEME/theme.css");
